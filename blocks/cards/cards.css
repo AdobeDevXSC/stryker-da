@@ -66,7 +66,7 @@
     a {
       font-weight: 700;
       text-transform: uppercase;
-      color: rgb(76 125 122);
+      color: var(--color-link);
       text-decoration: none;
       font-size: var(--body-font-size-s);
 
@@ -77,7 +77,7 @@
       }
 
       &:hover {
-        color: rgb(47 77 76);
+        color: var(--color-link-hover);
       }
     }
   }

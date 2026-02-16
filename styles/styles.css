@@ -160,32 +160,33 @@
   --color-light: rgb(255 255 255);
   --color-dark: rgb(0 0 0);
   --color-text: light-dark(var(--color-dark), var(--color-light));
-  --color-link: light-dark(var(--color-gray-900), var(--color-gray-100));
-  --color-brand: var(--color-purple-500);
-  --color-accent: light-dark(var(--color-magenta-600), var(--color-magenta-500));
+  --color-link: rgb(76 125 122);
+  --color-link-hover: rgb(47 77 76);
+  --color-brand: rgb(76 125 122);
+  --color-accent: rgb(255 181 0);
   --color-shaded: light-dark(#f9f9f9, #111);
 
   /* fonts */
   --font-family: montserrat, "Trebuchet MS", sans-serif;
 
   /* headings */
-  --heading-font-size-xxl: 32.44px;
-  --heading-font-size-xl: 28.83px;
-  --heading-font-size-l: 25.63px;
-  --heading-font-size-m: 22.78px;
-  --heading-font-size-s: 20.25px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xxl: 32px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 21px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
   --heading-line-height: 1.15;
 
   /* body */
-  --body-font-size-xxxl: 25px;
-  --body-font-size-xxl: 22px;
-  --body-font-size-xl: 20px;
-  --body-font-size-l: 18px;
-  --body-font-size-m: 16px;
-  --body-font-size-s: 14px;
+  --body-font-size-xxxl: 24px;
+  --body-font-size-xxl: 21px;
+  --body-font-size-xl: 18px;
+  --body-font-size-l: 16px;
+  --body-font-size-m: 14px;
+  --body-font-size-s: 13px;
   --body-font-size-xs: 12px;
-  --body-line-height: 1.6;
+  --body-line-height: 1.375;
 
   /* misc */
   --header-height: 64px;
@@ -211,7 +212,7 @@ body {
   font-family: var(--font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
-  padding: var(--header-height) 0 0;
+  padding: 0;
 
   &.has-breadcrumb {
     margin: calc(var(--header-height) + var(--breadcrumb-height)) 0 0;
@@ -232,15 +233,22 @@ header {
 
 a {
   color: var(--color-link);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
 
   &.btn {
     display: inline-block;
     line-height: 1;
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
-    border: 2px solid;
-    padding: 8px 12px;
+    text-transform: uppercase;
+    border: 1px solid;
+    padding: 9px 12px;
     box-sizing: border-box;
+    border-radius: 0;
 
     &.btn-outline {
       background: transparent;
@@ -250,7 +258,7 @@ a {
   &.btn-accent {
     color: #fff;
     background: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    border-color: var(--color-accent);
 
     &.btn-outline {
       color: var(--color-accent);
@@ -258,11 +266,17 @@ a {
   }
 
   &.btn-primary {
-    color: light-dark(var(--color-light), var(--color-dark));
-    background-color: light-dark(var(--color-dark), var(--color-light));
+    color: var(--color-light);
+    background-color: var(--color-brand);
+    border-color: rgb(66 109 107);
+
+    &:hover {
+      color: var(--color-light);
+      background-color: var(--color-link-hover);
+    }
 
     &.btn-outline {
-      color: light-dark(var(--color-dark), var(--color-light));
+      color: var(--color-brand);
       background: transparent;
     }
   }
@@ -270,7 +284,7 @@ a {
   &.btn-secondary {
     color: light-dark(var(--color-light), var(--color-dark));
     background-color: var(--color-gray-500);
-    border: 2px solid var(--color-gray-500);
+    border-color: var(--color-gray-500);
 
     &.btn-outline {
       color: var(--color-gray-500);
@@ -280,7 +294,7 @@ a {
   &.btn-negative {
     color: #fff;
     background-color: var(--color-red-600);
-    border: 2px solid var(--color-red-600);
+    border-color: var(--color-red-600);
 
     &.btn-outline {
       color: var(--color-red-600);
@@ -291,8 +305,14 @@ a {
 /* sections */
 .section {
   display: block;
+  margin-bottom: 30px;
 
   > .default-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+  }
+
+  > .block-content {
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
@@ -325,7 +345,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: var(--heading-line-height);
 }
 
@@ -337,7 +357,7 @@ h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 input,
@@ -365,7 +385,25 @@ svg {
 
 @media (width >= 1440px) {
   :root {
-    --grid-container-width: 1200px;
+    --grid-container-width: 1380px;
+  }
+}
+
+/* standalone links → buttons */
+main .default-content p > a:only-child {
+  display: inline-block;
+  color: var(--color-light);
+  background-color: var(--color-brand);
+  border: 1px solid rgb(66 109 107);
+  padding: 9px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--body-font-size-m);
+  line-height: 1;
+
+  &:hover {
+    background-color: var(--color-link-hover);
+    color: var(--color-light);
   }
 }
 
