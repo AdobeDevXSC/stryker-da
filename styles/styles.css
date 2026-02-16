@@ -316,6 +316,13 @@ a {
     max-width: var(--grid-container-width);
     margin: 0 auto;
   }
+
+  &.fill-width {
+    > .default-content,
+    > .block-content {
+      max-width: 100%;
+    }
+  }
 }
 
 main {
@@ -379,7 +386,11 @@ svg {
 
 /* @media (width >= 600px) {} */
 
-/* @media (width >= 900px) {} */
+@media (width >= 900px) {
+  :root {
+    --header-height: 114px;
+  }
+}
 
 /* @media (width >= 1200px) {} */
 
