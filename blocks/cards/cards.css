@@ -1,21 +1,23 @@
-.card {
-  --spacing-default: var(--spacing-l);
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  gap: var(--spacing-l);
 
-  word-break: break-word;
-  box-shadow: 0 1px 6px 0 rgb(0 0 0 / 12%);
-  overflow: hidden;
-  background-color: light-dark(var(--color-gray-100), var(--color-gray-900));
-  color: light-dark(var(--color-dark), var(--color-light));
-  transition: all 0.25s ease-in-out;
+  .cards-card {
+    --spacing-default: var(--spacing-l);
 
-  .card-inner {
+    overflow-wrap: break-word;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 12%);
+    overflow: hidden;
+    background-color: light-dark(var(--color-gray-100), var(--color-gray-900));
+    color: light-dark(var(--color-dark), var(--color-light));
+    transition: all 0.25s ease-in-out;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100%;
   }
 
   &:not(.quiet) {
-    .card-picture-container {
+    .cards-card-image {
       position: relative;
       padding-bottom: 60%;
 
@@ -32,9 +34,18 @@
         height: 100%;
       }
     }
+
+    .cards-card:hover {
+      transform: scale(1.005);
+      box-shadow: 0 2px 8px 0 rgb(0 0 0 / 16%);
+
+      picture {
+        opacity: 1;
+      }
+    }
   }
 
-  .card-content-container {
+  .cards-card-body {
     padding: var(--spacing-default);
 
     :first-child {
@@ -46,25 +57,16 @@
       margin-bottom: 0;
     }
 
-    &:has(+ .card-cta-container) {
+    &:has(+ .cards-card-cta) {
       padding: var(--spacing-default) var(--spacing-default) var(--spacing-m) var(--spacing-default);
     }
   }
 
-  .card-cta-container {
+  .cards-card-cta {
     padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
     margin: 0;
     display: flex;
     justify-content: end;
-  }
-
-  &:not(.quiet):hover {
-    transform: scale(1.005);
-    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 16%);
-
-    picture {
-      opacity: 1;
-    }
   }
 
   /* Variations */
@@ -72,13 +74,13 @@
     text-align: center;
   }
 
-  &.quiet {
+  &.quiet .cards-card {
     --spacing-default: 0;
 
     box-shadow: initial;
     background-color: initial;
 
-    .card-content-container * {
+    .cards-card-body * {
       margin: 6px;
     }
   }
