@@ -388,7 +388,7 @@ svg {
 
 @media (width >= 900px) {
   :root {
-    --header-height: 114px;
+    --header-height: 147px;
   }
 }
 

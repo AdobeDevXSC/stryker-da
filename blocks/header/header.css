@@ -171,6 +171,25 @@ header {
       display: flex;
       justify-content: end;
       align-items: center;
+      gap: var(--spacing-m);
+
+      p {
+        font-size: var(--body-font-size-xs);
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:not(:last-child)::after {
+          content: "|";
+          margin-left: var(--spacing-m);
+          color: var(--color-gray-400);
+        }
+      }
+
+      a {
+        color: var(--color-link);
+        font-size: var(--body-font-size-xs);
+        text-transform: uppercase;
+      }
     }
 
     > .block-content {
@@ -254,16 +273,16 @@ header {
     overflow: initial;
     background: linear-gradient(
       to bottom,
-      var(--color-light) 64px,
-      var(--color-accent) 64px
+      var(--color-light) 87px,
+      var(--color-accent) 87px
     );
 
     .header-content {
       max-width: var(--grid-container-width);
       margin: 0 auto;
       grid-template:
-        "brand actions" 64px
-        "nav nav" 50px / auto 1fr;
+        "brand actions" 87px
+        "nav nav" 60px / auto 1fr;
       gap: 0;
     }
 
@@ -346,7 +365,7 @@ header {
       .main-nav-link {
         color: var(--color-dark);
         font-weight: 400;
-        line-height: 50px;
+        line-height: 60px;
       }
     }
 
