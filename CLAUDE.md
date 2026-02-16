@@ -1,6 +1,6 @@
-# Project Memory - Motorola Solutions Migration
+# Project Memory - Stryker Solutions Migration
 
-Migrating Stryker Solutions homepage ([https://www.motorolasolutions.com/en_us.html](https://www.stryker.com/us/en/index.html)) to Adobe Edge Delivery Services.
+Migrating Stryker Solutions homepage ([https://www.stryker.com/us/en/index.html](https://www.stryker.com/us/en/index.html)) to Adobe Edge Delivery Services.
 
 ---
 
