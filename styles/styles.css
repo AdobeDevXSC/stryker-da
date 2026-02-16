@@ -228,7 +228,6 @@ body {
 header {
   display: none;
   height: var(--header-height);
-  position: fixed;
 }
 
 a {

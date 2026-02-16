@@ -4,10 +4,7 @@ header {
   --mega-columns: 4;
 
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
