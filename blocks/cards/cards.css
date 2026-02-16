@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
@@ -7,11 +8,9 @@
     --spacing-default: var(--spacing-l);
 
     overflow-wrap: break-word;
-    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 12%);
     overflow: hidden;
-    background-color: light-dark(var(--color-gray-100), var(--color-gray-900));
+    background-color: transparent;
     color: light-dark(var(--color-dark), var(--color-light));
-    transition: all 0.25s ease-in-out;
     display: grid;
     grid-template-rows: auto 1fr auto;
   }
@@ -24,8 +23,6 @@
       picture {
         position: absolute;
         inset: 0;
-        opacity: 0.85;
-        transition: opacity 0.25s ease-in-out;
       }
 
       img {
@@ -34,39 +31,55 @@
         height: 100%;
       }
     }
-
-    .cards-card:hover {
-      transform: scale(1.005);
-      box-shadow: 0 2px 8px 0 rgb(0 0 0 / 16%);
-
-      picture {
-        opacity: 1;
-      }
-    }
   }
 
   .cards-card-body {
-    padding: var(--spacing-default);
+    padding: var(--spacing-m) 0;
 
     :first-child {
       margin-top: 0;
-      font-size: 16px;
+      font-size: var(--heading-font-size-xs);
+      font-weight: 500;
+      line-height: var(--heading-line-height);
     }
 
     :last-child {
       margin-bottom: 0;
     }
 
+    p:not(:first-child) {
+      font-size: var(--body-font-size-s);
+      line-height: 1.375;
+    }
+
     &:has(+ .cards-card-cta) {
-      padding: var(--spacing-default) var(--spacing-default) var(--spacing-m) var(--spacing-default);
+      padding: var(--spacing-m) 0 var(--spacing-s) 0;
     }
   }
 
   .cards-card-cta {
-    padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
+    padding: 0;
     margin: 0;
     display: flex;
-    justify-content: end;
+    justify-content: start;
+
+    a {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgb(76 125 122);
+      text-decoration: none;
+      font-size: var(--body-font-size-s);
+
+      &::after {
+        content: "\25B8";
+        display: inline-block;
+        padding-left: 0.5em;
+      }
+
+      &:hover {
+        color: rgb(47 77 76);
+      }
+    }
   }
 
   /* Variations */
@@ -77,7 +90,6 @@
   &.quiet .cards-card {
     --spacing-default: 0;
 
-    box-shadow: initial;
     background-color: initial;
 
     .cards-card-body * {
