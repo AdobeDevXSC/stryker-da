@@ -97,27 +97,29 @@
     }
   }
 
-  /* Focus variant - "Our focus" style cards with gold accent border */
+  /* Focus variant - "Our focus" style cards */
   &.focus {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 
     .cards-card {
-      border-left: 4px solid var(--color-accent);
-      background-color: var(--color-light);
-      box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+      background-color: transparent;
     }
 
-    .cards-card-image {
-      border-radius: 8px 8px 0 0;
-      overflow: hidden;
+    .cards-card-image img {
+      border: 1px solid rgb(178 180 174);
     }
 
     .cards-card-body {
-      padding: var(--spacing-m) var(--spacing-l);
+      background-color: var(--color-light);
+      box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+      margin-top: -35px;
+      position: relative;
+      z-index: 1;
+      padding: 22px 35px 31px;
 
       :first-child strong {
         display: block;
-        color: var(--color-brand);
+        color: var(--color-accent);
         font-size: var(--heading-font-size-s);
         font-weight: 700;
         margin-bottom: 4px;
@@ -128,12 +130,17 @@
         font-style: normal;
         font-weight: 400;
         font-size: var(--body-font-size-m);
-        color: var(--color-gray-700);
+        color: var(--color-dark);
       }
     }
 
     .cards-card-cta {
-      padding: 0 var(--spacing-l) var(--spacing-l);
+      background-color: var(--color-light);
+      box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+      margin-top: -1px;
+      position: relative;
+      z-index: 1;
+      padding: 0 35px 31px;
     }
   }
 }
