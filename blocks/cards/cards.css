@@ -103,6 +103,18 @@
 
     .cards-card {
       background-color: transparent;
+      position: relative;
+      padding-left: 10px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        background: linear-gradient(90deg, rgb(175 109 4), var(--color-accent) 40%);
+      }
     }
 
     .cards-card-image img {
@@ -115,7 +127,11 @@
       margin-top: -35px;
       position: relative;
       z-index: 1;
-      padding: 22px 35px 31px;
+      padding: 22px 35px 6px;
+
+      &:has(+ .cards-card-cta) {
+        clip-path: inset(-10px -10px 0 -10px);
+      }
 
       :first-child strong {
         display: block;
@@ -137,10 +153,11 @@
     .cards-card-cta {
       background-color: var(--color-light);
       box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+      clip-path: inset(0 -10px -10px -10px);
       margin-top: -1px;
       position: relative;
       z-index: 1;
-      padding: 0 35px 31px;
+      padding: 16px 35px 31px;
     }
   }
 }
