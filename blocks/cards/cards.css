@@ -96,4 +96,44 @@
       margin: 6px;
     }
   }
+
+  /* Focus variant - "Our focus" style cards with gold accent border */
+  &.focus {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    .cards-card {
+      border-left: 4px solid var(--color-accent);
+      background-color: var(--color-light);
+      box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+    }
+
+    .cards-card-image {
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+
+    .cards-card-body {
+      padding: var(--spacing-m) var(--spacing-l);
+
+      :first-child strong {
+        display: block;
+        color: var(--color-brand);
+        font-size: var(--heading-font-size-s);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      :first-child em {
+        display: block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: var(--body-font-size-m);
+        color: var(--color-gray-700);
+      }
+    }
+
+    .cards-card-cta {
+      padding: 0 var(--spacing-l) var(--spacing-l);
+    }
+  }
 }
