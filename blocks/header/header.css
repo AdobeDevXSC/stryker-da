@@ -218,7 +218,12 @@ header {
 
   .main-nav-section {
     grid-area: nav;
-
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: flex-start;
+    width: 100%;
+    
     .default-content {
       max-width: 100%;
       margin: 0;
