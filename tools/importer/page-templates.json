@@ -1,0 +1,37 @@
+{
+  "templates": [
+    {
+      "name": "stryker-homepage",
+      "urls": ["https://www.stryker.com/us/en/index.html"],
+      "description": "Stryker corporate homepage with hero carousel, latest news cards, focus areas, people section, corporate responsibility, awards, and quick links",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".carouselslidegroup",
+            ".fullbleedpanel:has(.curatedcta)"
+          ]
+        },
+        {
+          "name": "card",
+          "instances": [
+            ".c-latestnews .item"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".cols2:has(.largeheadline)",
+            ".cols2:has(.curatedcta)"
+          ]
+        },
+        {
+          "name": "section-metadata",
+          "instances": [
+            ".bg-light-gray"
+          ]
+        }
+      ]
+    }
+  ]
+}

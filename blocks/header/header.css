@@ -1,13 +1,10 @@
 header {
-  --logo-width: 40px;
-  --logo-height: 40px;
+  --logo-width: 144px;
+  --logo-height: 36px;
   --mega-columns: 4;
 
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
@@ -171,6 +168,25 @@ header {
       display: flex;
       justify-content: end;
       align-items: center;
+      gap: var(--spacing-m);
+
+      p {
+        font-size: var(--body-font-size-xs);
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:not(:last-child)::after {
+          content: "|";
+          margin-left: var(--spacing-m);
+          color: var(--color-gray-400);
+        }
+      }
+
+      a {
+        color: var(--color-link);
+        font-size: var(--body-font-size-xs);
+        text-transform: uppercase;
+      }
     }
 
     > .block-content {
@@ -212,6 +228,8 @@ header {
     .main-nav-link {
       display: block;
       line-height: 64px;
+      text-transform: uppercase;
+      font-size: var(--body-font-size-m);
     }
 
     .menu,
@@ -250,12 +268,19 @@ header {
 @media (width >= 900px) {
   header {
     overflow: initial;
+    background: linear-gradient(
+      to bottom,
+      var(--color-light) 87px,
+      var(--color-accent) 87px
+    );
 
     .header-content {
       max-width: var(--grid-container-width);
       margin: 0 auto;
-      grid-template: "brand nav actions" 1fr / auto 1fr auto;
-      gap: var(--spacing-l);
+      grid-template:
+        "brand actions" 87px
+        "nav nav" 60px / auto 1fr;
+      gap: 0;
     }
 
     .menu,
@@ -307,9 +332,16 @@ header {
     }
 
     .main-nav-section {
+      .default-content {
+        max-width: 100%;
+        margin: 0;
+      }
+
       .main-nav-list {
         display: flex;
-        gap: var(--spacing-l);
+        gap: var(--spacing-xl);
+        height: 100%;
+        align-items: center;
       }
 
       .main-nav-item {
@@ -326,13 +358,23 @@ header {
           }
         }
       }
+
+      .main-nav-link {
+        color: var(--color-dark);
+        font-weight: 400;
+        line-height: 60px;
+      }
     }
 
     .actions-section {
       position: relative;
       overflow: initial;
 
-      .default-content {
+      > .default-content {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: var(--spacing-l);
         max-width: initial;
         margin: 0;
       }
