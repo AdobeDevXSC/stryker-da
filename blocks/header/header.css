@@ -118,6 +118,10 @@ header {
 
   .brand-section {
     grid-area: brand;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
 
     .default-content {
       height: var(--header-height);
@@ -160,9 +164,13 @@ header {
 
   .actions-section {
     grid-area: actions;
-    max-height: 64px;
+    max-height: 90px;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
     > .default-content {
       display: flex;

@@ -154,15 +154,15 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div>div>picture>img[src]"
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
                 },
                 {
                   "name": "alt",
-                  "selector": "div>div>picture>img[alt]"
+                  "selector": "div:nth-child(1)>div>picture>img[alt]"
                 },
                 {
                   "name": "text",
-                  "selector": "div>div>h1"
+                  "selector": "div:nth-child(2)>div"
                 }
               ]
             }
