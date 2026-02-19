@@ -1,5 +1,5 @@
 .columns {
-  --columns-gap: 0;
+  --columns-gap: 3rem;
 
   display: grid;
   gap: var(--columns-gap);
@@ -98,5 +98,18 @@
         order: 2;
       }
     }
+  }
+}
+
+
+/* variations */
+/* offset */
+.columns.offset-left .row {
+  grid-template-columns: 1fr;
+}
+
+@media (width >= 900px) {
+  .columns.offset-left .row {
+    grid-template-columns: 30% 70%;
   }
 }

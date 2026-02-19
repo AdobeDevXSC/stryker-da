@@ -5,7 +5,7 @@
   --min-height: var(--default-min-height);
 
   position: relative;
-  color: #fff;
+  color: #000;
   overflow: hidden;
 
   &.small {
@@ -13,7 +13,7 @@
   }
 
   &.large {
-    --min-height: 720px;
+    --min-height: 600px;
   }
 
   &.full {
@@ -84,6 +84,10 @@
     .fg-text {
       width: var(--grid-container-width);
       margin: 0 auto;
+
+      a {
+        
+      }
     }
 
     div > *:first-child {
