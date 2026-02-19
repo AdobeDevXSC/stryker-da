@@ -1,12 +1,12 @@
 .section {
-  --top-bottom-spacing: 0;
+  --top-bottom-spacing: 1rem;
   --section-container-width: var(--grid-container-width);
   --section-column-width: var(--grid-column-width);
 
   padding: var(--top-bottom-spacing) 0;
 
   > * {
-    color: light-dark(var(--color-dark), var(--color-light));
+    color: #000;
   }
 
   &.grid-2 {

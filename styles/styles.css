@@ -207,8 +207,8 @@ html {
 
 body {
   margin: 0;
-  background-color: light-dark(var(--color-light), var(--color-dark));
-  color: var(--color-text);
+  background-color: #fff; 
+  color: #000;
   font-family: var(--font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
@@ -281,9 +281,9 @@ a {
   }
 
   &.btn-secondary {
-    color: light-dark(var(--color-light), var(--color-dark));
-    background-color: var(--color-gray-500);
-    border-color: var(--color-gray-500);
+    color: #000;
+    background-color: #ffb500;
+    border-color: #e6a300;
 
     &.btn-outline {
       color: var(--color-gray-500);
@@ -317,6 +317,8 @@ a {
   }
 
   &.fill-width {
+    padding: 0;
+
     > .default-content,
     > .block-content {
       max-width: 100%;
@@ -429,4 +431,8 @@ aem-sidekick {
   &[open="true"].is-ready {
     opacity: 1;
   }
+}
+
+.section.highlight {
+  background-color: #dedede;
 }
