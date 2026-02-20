@@ -1,9 +1,9 @@
 auto-generated: true
 indices:
-  blog:
+  leaders:
     include:
-      - /blog/**
-    target: /blog/query-index.json
+      - /us/en/about/our-management/leaders/**
+    target: /us/en/about/our-management/leaders/query-index.json
     properties:
       title:
         select: head > meta[property="og:title"]
