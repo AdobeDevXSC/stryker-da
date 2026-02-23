@@ -1,0 +1,167 @@
+/* stylelint-disable no-descending-specificity */
+
+/* ===== EDGE-TO-EDGE WRAPPER ===== */
+main > div:has(.headline) {
+  max-width: unset;
+  padding: 0;
+}
+
+/* ===== BLOCK CONTAINER ===== */
+.headline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-l) 0;
+  min-height: 400px;
+  align-items: end;
+
+  /* Gold accent bar at the bottom */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 12px;
+    background-color: var(--color-accent);
+    z-index: 2;
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-l);
+    align-items: end;
+    width: 100%;
+  }
+}
+
+/* ===== TEXT CARD ===== */
+.headline .headline-card {
+  background-color: var(--color-surface-white, #fff);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  z-index: 1;
+
+  h2,
+  h3 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: var(--spacing-s);
+  }
+
+  p {
+    font-size: var(--body-font-size-m);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-m);
+  }
+}
+
+/* ===== CTA BUTTON ===== */
+.headline .headline-cta {
+  margin-top: var(--spacing-m);
+  margin-bottom: 0;
+
+  a {
+    display: inline-block;
+    color: var(--color-light);
+    background-color: var(--color-brand);
+    border: 1px solid rgb(66 109 107);
+    padding: 9px 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: var(--body-font-size-m);
+    line-height: 1;
+
+    &:hover {
+      background-color: var(--color-link-hover);
+      color: var(--color-light);
+    }
+  }
+}
+
+/* ===== MEDIA COLUMN ===== */
+.headline .headline-media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 300px;
+}
+
+/* ===== LARGE HEADLINE NUMBER ===== */
+.headline .headline-number {
+  font-size: clamp(120px, 15vw, 220px);
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--color-accent);
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* ===== IMAGE ===== */
+.headline .headline-image {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  line-height: 0;
+  align-self: flex-end;
+}
+
+.headline .headline-image picture {
+  display: block;
+}
+
+.headline .headline-image img {
+  display: block;
+  max-height: 350px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ===== DESKTOP LAYOUT ===== */
+@media (width >= 900px) {
+  .headline {
+    padding: var(--spacing-xxl) var(--spacing-l) 0;
+    min-height: 450px;
+
+    > div {
+      grid-template-columns: 2fr 3fr;
+      align-items: end;
+    }
+  }
+
+  .headline .headline-card {
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .headline .headline-number {
+    top: -20px;
+  }
+
+  .headline .headline-image img {
+    max-height: 420px;
+  }
+}
+
+@media (width >= 1200px) {
+  .headline .headline-number {
+    font-size: 220px;
+  }
+
+  .headline .headline-image img {
+    max-height: 480px;
+  }
+}
