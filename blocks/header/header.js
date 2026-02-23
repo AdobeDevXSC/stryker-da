@@ -184,14 +184,33 @@ async function decorateHeader(fragment) {
  * @param {Element} el The header element
  */
 export default async function init(el) {
+  // Fallback for UE/instrumentation: use the real <header> if no element is passed
+  const container = el || document.querySelector('header');
+
+  if (!container) {
+    console.warn('Header init called without a valid container');
+    return;
+  }
+
   const headerMeta = getMetadata('header');
   const path = headerMeta || HEADER_PATH;
+
+  console.log(`Loading header from ${path}`);
+
   try {
     const fragment = await loadFragment(`${locale.prefix}${path}`);
+    if (!fragment) {
+      console.warn(`No header fragment found at ${locale.prefix}${path}`);
+      return;
+    }
+
     fragment.classList.add('header-content');
     await decorateHeader(fragment);
-    el.append(fragment);
+
+    // Optional: clear old header content to avoid duplicates
+    container.innerHTML = '';
+    container.append(fragment);
   } catch (e) {
-    throw Error(e);
+    console.error('Error loading header', e);
   }
 }
