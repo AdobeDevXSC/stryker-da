@@ -250,8 +250,6 @@ export default async function init(el) {
   const headerMeta = getMetadata('header');
   const path = headerMeta || HEADER_PATH;
 
-  console.log(`Loading header from ${path}`);
-
   try {
     const fragment = await loadFragment(`${locale.prefix}${path}`);
     if (!fragment) {
