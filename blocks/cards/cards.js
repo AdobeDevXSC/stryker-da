@@ -1,31 +1,28 @@
 function decorateCards(cards, hashAware) {
   cards.classList.add('cards-card');
-  const pic = cards.querySelector('picture');
-  if (pic) {
-    const picPara = pic.closest('p');
-    if (picPara) {
-      const picDiv = document.createElement('div');
-      picDiv.className = 'cards-card-image';
-      picDiv.append(pic);
-      cards.insertAdjacentElement('afterbegin', picDiv);
-      picPara.remove();
+
+  const cols = [...cards.children];
+
+  // 2-column content model: col 0 = image, col 1 = text
+  if (cols.length >= 2) {
+    const imageCol = cols[0];
+    const textCol = cols[1];
+
+    imageCol.classList.add('cards-card-image');
+    textCol.classList.add('cards-card-body');
+
+    // Decorate CTA
+    const ctaPara = textCol.querySelector('p:last-of-type');
+    if (ctaPara) {
+      const cta = ctaPara.querySelector('a');
+      if (cta) {
+        if (hashAware) {
+          cta.href = `${cta.getAttribute('href')}${window.location.hash}`;
+        }
+        ctaPara.classList.add('cards-card-cta');
+      }
     }
   }
-  // Decorate content
-  const con = cards.querySelector(':scope > div:not([class])');
-  if (!con) return;
-  con.classList.add('cards-card-body');
-
-  // Decorate CTA
-  const ctaPara = con.querySelector('p:last-of-type');
-  if (!ctaPara) return;
-  const cta = ctaPara.querySelector('a');
-  if (!cta) return;
-  if (hashAware) {
-    cta.href = `${cta.getAttribute('href')}${window.location.hash}`;
-  }
-  ctaPara.classList.add('cards-card-cta');
-  cards.append(ctaPara);
 }
 
 export default function decorate(block) {
