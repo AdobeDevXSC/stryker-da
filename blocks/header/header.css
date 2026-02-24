@@ -191,7 +191,7 @@ header {
       }
 
       a {
-        color: var(--color-link);
+        color: #000;
         font-size: var(--body-font-size-xs);
         text-transform: uppercase;
       }
@@ -243,6 +243,7 @@ header {
       line-height: 64px;
       text-transform: uppercase;
       font-size: var(--body-font-size-m);
+      letter-spacing: -1px;
     }
 
     .menu,
@@ -436,8 +437,22 @@ header .actions-section .block-content > div > p {
   font-size: 12px;
 }
 
+header .actions-section .block-content > div > p > a {
+  color: #000;
+}
+
 header .actions-section .block-content > div > p:not(:last-child) {
   border-right: 1px solid rgb(76, 125, 122);
   padding-right: 1rem;
 }
 
+
+@media (min-width: 900px) and (max-width: 1399px) {
+  header .main-nav-section .main-nav-list {
+    gap: 1rem;
+  }
+
+  header .main-nav-section .main-nav-list .main-nav-item * {
+    font-size: 12px;
+  }
+}
