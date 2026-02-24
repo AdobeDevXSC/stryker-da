@@ -421,22 +421,22 @@ header {
 }
 
 /* UE override */
-header .section-actions-section .block-content {
+header .actions-section .block-content {
   margin: 0;
 }
 
-header .section-actions-section .block-content > div {
+header .actions-section .block-content > div {
  display: flex;
  flex-direction: row;
  gap: 1rem;
 }
 
-header .section-actions-section .block-content > div > p {
+header .actions-section .block-content > div > p {
   text-transform: uppercase;
   font-size: 12px;
 }
 
-header .section-actions-section .block-content > div > p:not(:last-child) {
+header .actions-section .block-content > div > p:not(:last-child) {
   border-right: 1px solid rgb(76, 125, 122);
   padding-right: 1rem;
 }
