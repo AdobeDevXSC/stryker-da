@@ -231,10 +231,17 @@ header {
 
     .main-nav-item {
       border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      color: #000;
+      text-transform: uppercase;
 
       > * {
         max-width: var(--grid-container-width);
         margin: 0 auto;
+      }
+      
+      a {
+        color: #000;
+        text-transform: uppercase;
       }
     }
 
