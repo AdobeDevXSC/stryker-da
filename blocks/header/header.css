@@ -448,6 +448,10 @@ header .actions-section .block-content > div > p:not(:last-child) {
 
 
 @media (min-width: 900px) and (max-width: 1399px) {
+  header .main-nav-section > .block-content {
+    display: none;
+  }
+
   header .main-nav-section .main-nav-list {
     gap: 1rem;
   }
