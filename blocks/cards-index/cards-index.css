@@ -2,16 +2,17 @@
 .cards-index {
   display: grid;
   gap: var(--spacing-l);
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
   margin: 0 auto;
 
   .cards-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     overflow-wrap: break-word;
     overflow: hidden;
     background-color: transparent;
     color: #000;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
   }
 
   .cards-card-image {
@@ -48,15 +49,11 @@
       font-size: var(--body-font-size-s);
       line-height: 1.375;
     }
-
-    &:has(+ .cards-card-cta) {
-      padding: var(--spacing-m) 0 var(--spacing-s) 0;
-    }
   }
 
   .cards-card-cta {
     padding: 0;
-    margin: 0;
+    margin: var(--spacing-s) 0 0;
     display: flex;
     justify-content: start;
 
@@ -79,3 +76,10 @@
     }
   }
 }
+
+@media (width >= 600px) {
+  .cards-index {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

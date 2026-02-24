@@ -7,9 +7,8 @@
 
   .cards-card {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--spacing-l);
-    align-items: start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     overflow-wrap: break-word;
     overflow: hidden;
     background-color: transparent;
@@ -18,7 +17,7 @@
 
   .cards-card-image {
     position: relative;
-    aspect-ratio: 3 / 2;
+    padding-bottom: 60%;
 
     picture {
       position: absolute;
@@ -33,7 +32,7 @@
   }
 
   .cards-card-body {
-    padding: 0;
+    padding: var(--spacing-m) 0;
 
     :first-child {
       margin-top: 0;
@@ -95,30 +94,32 @@
     grid-template-columns: 1fr;
 
     .cards-card {
-      grid-template-columns: 300px 1fr;
-      background-color: transparent;
-      position: relative;
-      padding-left: 5px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-        background: var(--color-accent);
-      }
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border-top: 5px solid var(--color-accent);
     }
 
-    .cards-card-image img {
-      border: 1px solid rgb(178 180 174);
+    .cards-card-image {
+      padding-bottom: 0;
+
+      picture {
+        position: relative;
+        inset: auto;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid rgb(178 180 174);
+      }
     }
 
     .cards-card-body {
       background-color: var(--color-light);
       box-shadow: 0 0 10px rgb(0 0 0 / 30%);
-      padding: 22px 35px 6px;
+      padding: 22px 30px 30px;
 
       :first-child strong {
         display: block;
@@ -138,10 +139,7 @@
     }
 
     .cards-card-cta {
-      background-color: var(--color-light);
-      box-shadow: 0 0 10px rgb(0 0 0 / 30%);
-      clip-path: inset(0 -10px -10px -10px);
-      padding: 16px 35px 31px;
+      margin: var(--spacing-s) 0 0;
     }
   }
 }
@@ -150,17 +148,18 @@
   .cards:not(.focus) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .cards.focus {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (width >= 900px) {
-  .cards .cards-card {
-    grid-template-columns: 250px 1fr;
-  }
-
-  .cards.focus .cards-card {
-    grid-template-columns: 350px 1fr;
+  .cards.focus {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
 
 /* Variations */
 .cards.management {

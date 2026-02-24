@@ -22,32 +22,31 @@ export default async function decorate(block) {
     const card = document.createElement('div');
     card.className = 'cards-card';
 
-    // Image
+    // Image column
+    const imageCol = document.createElement('div');
+    imageCol.className = 'cards-card-image';
     if (item.image) {
-      const imageDiv = document.createElement('div');
-      imageDiv.className = 'cards-card-image';
       const picture = document.createElement('picture');
       const img = document.createElement('img');
       img.src = item.image;
       img.alt = item.title || '';
       img.loading = 'lazy';
       picture.append(img);
-      imageDiv.append(picture);
-      card.append(imageDiv);
+      imageCol.append(picture);
     }
+    card.append(imageCol);
 
-    // Body
-    const body = document.createElement('div');
-    body.className = 'cards-card-body';
+    // Text column
+    const textCol = document.createElement('div');
+    textCol.className = 'cards-card-body';
     const h3 = document.createElement('h3');
     h3.textContent = item.title || '';
-    body.append(h3);
+    textCol.append(h3);
     if (item.description) {
       const desc = document.createElement('p');
       desc.textContent = item.description;
-      body.append(desc);
+      textCol.append(desc);
     }
-    card.append(body);
 
     // CTA link
     if (item.path) {
@@ -58,9 +57,10 @@ export default async function decorate(block) {
       a.href = item.path;
       a.textContent = `Meet ${firstName}`;
       ctaPara.append(a);
-      card.append(ctaPara);
+      textCol.append(ctaPara);
     }
 
+    card.append(textCol);
     block.append(card);
   });
 }
