@@ -2,7 +2,7 @@ auto-generated: true
 indices:
   news:
     include:
-      - /us/en/emergency-care/news/**
+      - /us/en/emergency-care/news/2022/**
     target: /us/en/emergency-care/news/query-index.json
     properties:
       title:
