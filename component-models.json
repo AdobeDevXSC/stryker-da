@@ -77,12 +77,12 @@
         "label": "Style",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Full Width",
+            "value": "fill-width"
           },
           {
-            "name": "Image Zoom on Hover",
-            "value": "image-zoom-hover"
+            "name": "Focus",
+            "value": "focus"
           }
         ]
       }
