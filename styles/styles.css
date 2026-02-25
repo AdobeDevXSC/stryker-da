@@ -421,7 +421,8 @@ main .default-content p > a:only-child {
 
 main > div,
 .has-template,
-div[data-status] {
+div[data-status],
+main .section:has(.metadata) {
   display: none;
 }
 
