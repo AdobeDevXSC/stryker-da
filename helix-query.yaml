@@ -3,6 +3,7 @@ indices:
   news:
     include:
       - /us/en/emergency-care/news/2022/**
+      - /us/en/emergency-care/news/2024/**
     target: /us/en/emergency-care/news/query-index.json
     properties:
       title:
