@@ -1,0 +1,208 @@
+/* stylelint-disable no-descending-specificity */
+
+/* ===== LAYOUT ===== */
+.news-feed-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (width >= 900px) {
+  .news-feed-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+  }
+}
+
+/* ===== TABS ===== */
+.news-feed-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--color-gray-200);
+  margin-bottom: var(--spacing-xl);
+}
+
+.news-feed-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 12px 24px;
+  font-family: var(--font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-600);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.news-feed-tab:hover {
+  color: var(--color-gray-900);
+}
+
+.news-feed-tab.active {
+  color: var(--color-gray-900);
+  border-bottom-color: var(--color-gray-900);
+}
+
+/* ===== COUNTER ===== */
+.news-feed-counter {
+  font-size: var(--body-font-size-s);
+  color: var(--color-gray-600);
+  margin: 0 0 var(--spacing-xl);
+}
+
+/* ===== CARDS ===== */
+.news-feed-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-feed-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+  padding: var(--spacing-xl) 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+@media (width >= 600px) {
+  .news-feed-card {
+    grid-template-columns: 240px 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (width >= 900px) {
+  .news-feed-card {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* ===== CARD IMAGE ===== */
+.news-feed-card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.news-feed-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== CARD BODY ===== */
+.news-feed-card-body h2 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  color: rgb(0 0 0);
+}
+
+.news-feed-card-body p {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--color-gray-700);
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== CTA LINK ===== */
+.news-feed-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgb(0 0 0);
+  text-decoration: none;
+}
+
+.news-feed-card-cta:hover {
+  color: var(--color-gray-700);
+}
+
+.news-feed-arrow::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentcolor;
+}
+
+/* ===== LOAD MORE ===== */
+.news-feed-load-more {
+  display: block;
+  margin: var(--spacing-xl) auto;
+  padding: 12px 48px;
+  background: rgb(0 0 0);
+  color: rgb(255 255 255);
+  border: none;
+  font-family: var(--font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.news-feed-load-more:hover {
+  background: var(--color-gray-800);
+}
+
+/* ===== SIDEBAR ===== */
+.news-feed-sidebar {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .news-feed-sidebar {
+    display: block;
+    padding-top: 80px;
+  }
+}
+
+.news-feed-sidebar-content h2,
+.news-feed-sidebar-content strong {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 12px;
+  display: block;
+}
+
+.news-feed-sidebar-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 var(--spacing-xxl);
+}
+
+.news-feed-sidebar-content li {
+  margin-bottom: 8px;
+}
+
+.news-feed-sidebar-content a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.news-feed-sidebar-content a:hover {
+  color: var(--color-link-hover);
+}
+
+/* ===== INITIAL STATE (before JS loads) ===== */
+.news-feed:not(.news-feed-loaded) {
+  min-height: 400px;
+}
