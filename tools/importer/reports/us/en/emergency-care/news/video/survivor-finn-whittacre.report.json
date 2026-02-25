@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.stryker.com/us/en/emergency-care/news/video/survivor-finn-whittacre.html",
+  "path": "us/en/emergency-care/news/video/survivor-finn-whittacre",
+  "timestamp": "2026-02-25T15:54:09.945Z",
+  "title": "Survivor: Finn Whittacre | Stryker",
+  "template": "emergency-care-news",
+  "blocks": [
+    "cards"
+  ]
+}

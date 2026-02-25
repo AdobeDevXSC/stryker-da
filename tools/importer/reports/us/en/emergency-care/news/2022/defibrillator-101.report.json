@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.stryker.com/us/en/emergency-care/news/2022/defibrillator-101.html",
+  "path": "us/en/emergency-care/news/2022/defibrillator-101",
+  "timestamp": "2026-02-25T15:54:06.119Z",
+  "title": "Defibrillator 101 | Stryker",
+  "template": "emergency-care-news",
+  "blocks": [
+    "cards",
+    "columns"
+  ]
+}
