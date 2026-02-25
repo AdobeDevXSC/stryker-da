@@ -2,7 +2,9 @@
   "templates": [
     {
       "name": "stryker-homepage",
-      "urls": ["https://www.stryker.com/us/en/index.html"],
+      "urls": [
+        "https://www.stryker.com/us/en/index.html"
+      ],
       "description": "Stryker corporate homepage with hero carousel, latest news cards, focus areas, people section, corporate responsibility, awards, and quick links",
       "blocks": [
         {
@@ -29,6 +31,36 @@
           "name": "section-metadata",
           "instances": [
             ".bg-light-gray"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "emergency-care-news",
+      "urls": [
+        "https://www.stryker.com/us/en/emergency-care/news/2026/streamlining-hospital-workflows-with-data-and-devices.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/stryker-lifepak-35-recieves-design-award.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2022/defibrillator-101.html",
+        "https://www.stryker.com/us/en/emergency-care/news/video/survivor-finn-whittacre.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2024/sudden-cardiac-arrest-vs-heart-attack-what-you-need-to-know.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/sudden-cardiac-arrest-awareness-and-preparation.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/vernon-township-fd-empowering-first-responders-for-every-call.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/why-powered-fleet-is-key-ems-fire-departments.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/delhi-township-fire-department-stays-ready-for-any-call.html",
+        "https://www.stryker.com/us/en/emergency-care/news/2025/enhancing-pediatric-advanced-life-support.html"
+      ],
+      "description": "Emergency care news article pages with H1 title, publication date, hero image, article body content with H2/H3 headings, paragraphs, bullet lists, inline links. Includes Related products cards section, Resources columns section with Explore/Learn/Support/More links, and footnotes/disclaimers section.",
+      "blocks": [
+        {
+          "name": "cards",
+          "instances": [
+            ".c-customizeable"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".experienceFragment"
           ]
         }
       ]
